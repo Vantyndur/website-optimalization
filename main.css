@@ -1,0 +1,97 @@
+/*definicja kolorów elementów*/
+button {
+    background-color: rgb(234, 234, 234);
+}
+header, footer {
+    background-color: aquamarine;
+}
+aside {
+    background-color: rgb(142, 140, 140);
+}
+article {
+    background-color: lightgray;
+}
+/*koniec definicji kolorów elementów*/
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+}
+header{
+    flex-grow: 0;
+    min-height: 100px;
+}
+section{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: stretch;
+}
+aside>ul {
+    flex-grow: 1;
+    padding-left: 0;
+    padding-right: 0;
+    width:150px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+aside>ul>li{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+aside>ul>li>button{
+    box-sizing: border-box;
+    width:100%;
+}
+aside{
+    flex-grow: 0;
+    min-width: fit-content;
+    justify-content: center;
+}
+
+article{
+    flex-grow: 1;
+    padding: 10px;
+}
+footer{
+    flex-grow: 0;
+    min-height: 30px;
+}
+@media (max-width: 600px) {
+    section {
+        flex-direction: column;
+    }
+    aside>ul{
+        width:100%;
+    }
+}
+/* Ustawia dzieci article na niewidoczne */
+#article > * {
+    display: none;
+}
+
+#studentPage > h4{
+    display: inline-block;
+}
+.gray{
+    color: gray;
+}
+#studentPageName, #studentPageActualTerm {
+    font-weight: normal;
+    color: black;
+
+}

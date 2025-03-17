@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SZOS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="description" content="Website for managing students grades. For university administrators.">
+    <meta name="keywords" content="students, grades, subjects, DataBase, management">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <h1>system zarządzania ocenami studentów</h1>
+    </header>
+    <section>
+        <aside  id="aside">
+            <ul>
+                <li><h2>Opcje</h2></li>
+                <li><button id="addStudentButton">Dodaj studenta</button></li>
+                <li><button id="addSubjectButton">Dodaj przedmiot</button></li>
+                <li><button id="showAllSubjectsButton">Baza przedmiotów</button></li>
+                <li><button id="showAllStudentsButton">Baza studentów</button></li>
+            </ul>
+        </aside>
+        <article  id="article">
+            <button id="refreshButton">refresh</button> 
+            <div id="tableContainer"></div>
+            <div id="addStudentForm">
+                <form>
+                    <label for="StudentName">Imię i Nazwisko:</label><br>
+                    <input type="text" value="Dawid Klyta" id="StudentName" name="StudentName"><br>
+                    <label for="StudentActualTerm">Aktualny semestr:</label><br>
+                    <input type="number" value="5" id="StudentActualTerm" name="StudentActualTerm"><br>
+                </form><br>
+                <button id="submitAddStudent">Zatwierdź</button>
+                <button id="cancelAddStudent">Anuluj</button>
+            </div>
+            <div id="addSubjectForm">
+                <form>
+                    <label for="SubjectName">Nazwa przedmiotu:</label><br>
+                    <input type="text" id="SubjectName" name="SubjectName" value="Programowanie Stron Internetowych"><br>
+                    <label for="SubjectTerm">Semestr, na którym przdmiot obowiązuje:</label><br>
+                    <input type="number" id="SubjectTerm" name="SubjectTerm" value="5"><br>
+                </form><br>
+                <button id="submitAddSubject">Zatwierdź</button>
+                <button id="cancelAddSubject">Anuluj</button>
+            </div>
+            <div id="studentPage">
+                <h3>Student:</h3><br>
+                <h4 class="gray">Imie i nazwisko: </h4>&nbsp;<h4 id="studentPageName"></h4>
+                &nbsp;<h4 class="gray">Aktualny semestr: </h4>&nbsp;<h4 id="studentPageActualTerm"></h4><br>
+                <button id="studentPageShowGradesButton">Oceny</button>
+                <button id="studentPageShowSubjectsButton">Przedmioty</button>
+                <button id="deleteStudentButton">Usuń studenta</button>
+                <hr>
+                <div id="studentPageGrades">
+                    <div id="studentPageGradeTable"></div>
+                    <button id="studentPageAddGradeButton">Dodaj studentowi ocenę</button>
+                </div>
+                <div id="studentPageSubjects">
+                    <div id="studentPageSubjectsTable"></div>
+                    <button id="studentPageAddSubjectButton">Przypisz studenta do przedmiotu</button>
+                </div>
+                <div id="addSubjectToStudentPage">
+                    <form>
+                        <label for="subjectsDropdown">Wybierz przedmiot:</label><br>
+                        <select name="subjectsDropdown" id="subjectsDropdown"></select><br>
+                    </form><br>
+                    <button id="submitAddSubjectToStudentButton">Zatwierdź</button>
+                    <button id="cancelAddSubjectToStudentButton">Anuluj</button>
+                </div>
+                <div id="addGradeToStudentPage">
+                    <form>
+                        <label for="gradeValue">Wartość oceny: </label><br>
+                        <select id="gradeValue" name="gradeValue">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4">4</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5">5</option>
+                        </select><br>
+                        <label for="GradeSubject">Przedmiot:</label><br>
+                        <select id="GradeSubject" name="GradeSubject"></select>
+                    </form><br>
+                    <button id="submitAddGradeToStudent">Zatwierdź</button>
+                    <button id="cancelAddGradeToStudent">Anuluj</button>
+                </div>
+            </div>
+            <div id="allSubjectsPage">
+                <button id="refreshSubjectsButton">refresh</button>
+                <div id="allSubjectsPageTable"></div>
+            </div>
+        </article>
+    </section>
+    <footer>
+        <span>Autor: Dawid Klyta</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src='main.js'></script>
+</body>
+</html>
